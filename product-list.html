@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greyder</title>
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="bg-dark container-fluid">
+            <div class="row d-flex align-items-center py-2">
+                <div class="col-6"><span class="h-top-left text-white">377 TL ve Üzeri KARGO BEDAVA!</span></div>
+                <div class="col-6 d-flex align-items-center justify-content-end text-white">
+                    <a href="tel:05325484264" class="text-white font-weight-bold">0532 548 42 64</a>
+                    <a href="#" class="ml-3 text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="17" height="23" viewBox="0 0 17 23"><g><g><path fill="none" stroke="#fff" stroke-miterlimit="20" stroke-width="2" d="M5.704 8.394a2.688 2.688 0 1 1 5.376 0 2.688 2.688 0 0 1-5.376 0zM2.86 13.3C4 15.23 7.586 20.102 7.586 20.102a1 1 0 0 0 1.61 0S13 14.939 14 13.235c1-1.704 1.56-2.96 1.783-4.84A7.393 7.393 0 0 0 8.391 1 7.393 7.393 0 0 0 1 8.394c.193 1.985.747 2.973 1.86 4.905z"/></g></g></svg>
+                        Sipariş Takibi</a>
+                </div>
+            </div>
+        </div>
+        <div class="position-relative container-fluid bg-warning py-3">
+            <div class="row">
+                <div class="position-static col-4 offset-lg-4 d-flex align-items-center justify-content-center">
+                    <nav class="navbar navbar-expand-lg w-100">
+                        <a class="navbar-brand" href="#">
+                            <svg class="img-fluid" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="400" height="58" viewBox="0 0 400 58">
+                                <metadata>
+                                    <!--?xpacket begin="&#xFEFF;" id="W5M0MpCehiHzreSzNTczkc9d"?-->
+                                    <x:xmpmeta xmlns:x="adobe:ns:meta/" x:xmptk="Adobe XMP Core 5.6-c142 79.160924, 2017/07/13-01:06:39        ">
+                                        <rdf:rdf xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+                                            <rdf:description rdf:about=""></rdf:description>
+                                        </rdf:rdf>
+                                    </x:xmpmeta>                     
+                                    <!--?xpacket end="w"?-->
+                                </metadata>
+                                <image width="400" height="58" xlink:href="data:img/png;base64,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"></image>
+                            </svg>
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      
+                        <div class="collapse navbar-collapse w-100" id="navbarSupportedContent">
+                          <ul class="navbar-nav d-flex align-items-center justify-content-center w-100">
+                            <li class="nav-item active">
+                              <a class="nav-link text-uppercase text-dark font-weight-bold" href="#">Kadın</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a class="nav-link dropdown-toggle text-uppercase text-dark font-weight-bold" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                                Erkek
+                              </a>
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <div class="container-fluid">
+                                    <div class="col-12 px-0">
+                                        <div class="row align-items-center">
+                                            <div class="col-6">
+                                                <div class="row">
+                                                    <div class="col-6 d-flex flex-column">
+                                                        <a href="#" class="d-flex align-items-center submenu-red">2023 Sonbahar - Kış</a>
+                                                        <ul class="list-unstyled d-flex flex-column">
+                                                            <li class="d-flex flex-column">
+                                                                <a href="#" class="d-flex align-items-center">Ayakkabı</a>
+                                                                <ul class="list-unstyled d-flex flex-column">
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Casual</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Comfort</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Klasik</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Sneaker</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Spor</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Outdoor</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="list-unstyled d-flex flex-column">
+                                                            <li class="d-flex flex-column">
+                                                                <a href="#" class="d-flex align-items-center">Bot</a>
+                                                                <ul class="list-unstyled d-flex flex-column">
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Günlük Bot</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Klasik Bot</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Outdoor</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="col-6 d-flex flex-column">
+                                                        <ul class="list-unstyled d-flex flex-column">
+                                                            <li class="d-flex flex-column">
+                                                                <a href="#" class="d-flex align-items-center">Su Geçirmez</a>
+                                                                <ul class="list-unstyled d-flex flex-column">
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Su Geçirmez Bot</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">Su Geçirmez Ayakkabı</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                        <ul class="list-unstyled d-flex flex-column">
+                                                            <li class="d-flex flex-column">
+                                                                <a href="#" class="d-flex align-items-center">Büyük Numara</a>
+                                                                <ul class="list-unstyled d-flex flex-column">
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">47 Numara</a>
+                                                                    </li>
+                                                                    <li class="d-flex align-items-center">
+                                                                        <a href="#" class="d-flex align-items-center">48 Numara</a>
+                                                                    </li>
+                                                                </ul>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <img src="https://via.placeholder.com/650x370" alt="Sneaker" class="img-fluid">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                              <div class="dropdown-overlay"></div>
+                            </li>
+                            <li class="nav-item ml-auto">
+                              <a class="nav-link text-uppercase text-dark font-weight-bold" href="#">Çanta</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link text-uppercase text-dark font-weight-bold" href="#">Outlet</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </nav>
+                </div>
+                <div class="col-4 d-flex align-items-center justify-content-end h-quick-wrap">
+                    <a href="#" class="h-search">
+                        Arama
+                        <svg width="19" height="19" viewBox="0 0 19 19" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h26v26H0z"></path></defs><g transform="translate(-3 -3)" fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"></use></mask><path d="M15.574 13.517A6.502 6.502 0 0 0 5.68 5.154a6.5 6.5 0 0 0 8.362 9.895l6.192 6.191 1.532-1.532-6.192-6.191c1.206-1.693 1.206-1.693 0 0zM13.34 6.686a4.333 4.333 0 1 1-6.128 6.128 4.333 4.333 0 0 1 6.128-6.128c1.128 1.128 1.128 1.128 0 0z" fill="#373737" mask="url(#b)"></path></g></svg>
+                    </a>
+                    <a href="#" class="mx-4 h-account">
+                        <svg width="18" height="19" viewBox="0 0 18 19" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><path id="a" d="M0 0h24v24H0z"></path></defs><g transform="translate(-3 -2)" fill="none" fill-rule="evenodd"><mask id="b" fill="#fff"><use xlink:href="#a"></use></mask><path d="M7 7c0 2.757 2.243 5 5 5s5-2.243 5-5-2.243-5-5-5-5 2.243-5 5zm2 0c0-1.654 1.346-3 3-3s3 1.346 3 3-1.346 3-3 3-3-1.346-3-3zm12 13c0-3.859-3.141-7-7-7h-4c-3.86 0-7 3.141-7 7v1h2v-1c0-2.757 2.243-5 5-5h4c2.757 0 5 2.243 5 5v1h2v-1z" fill="#373737" mask="url(#b)"></path></g></svg>
+                    </a>
+                    <a href="#" class="h-cart">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 448 448" style="enable-background:new 0 0 448 448;" xml:space="preserve">
+                            <g>
+                                <path d="M424.807,151.238c-4.284-4.707-10.245-7.311-16.807-7.329h-96V88c0-48.523-39.477-88-88-88s-88,39.477-88,88v55.909H39.977   c-6.539,0.019-12.5,2.621-16.783,7.329c-4.273,4.694-6.3,10.851-5.708,17.332c6.69,73.481,13.5,150.628,20.821,235.847   c1.094,12.701,11.471,24.62,23.637,27.137C115.156,442.467,169.679,448,224,448s108.845-5.533,162.069-16.449   c12.153-2.514,22.529-14.433,23.624-27.136c7.309-85.09,14.12-162.235,20.82-235.842   C431.106,162.09,429.08,155.934,424.807,151.238z M152,88c0-39.701,32.299-72,72-72s72,32.299,72,72v55.909H152V88z    M382.841,415.88C330.686,426.576,277.244,432,224,432s-106.686-5.424-158.828-16.117c-5.232-1.082-10.438-7.201-10.924-12.837   c-1.179-13.724-2.344-27.218-3.498-40.543c57.499,9.043,115.374,13.579,173.249,13.579c57.875,0,115.75-4.535,173.249-13.579   c-1.154,13.326-2.319,26.82-3.497,40.541C393.266,408.681,388.059,414.801,382.841,415.88z M414.579,167.119   c-4.3,47.242-8.646,95.953-13.14,147.27c-0.072,0.009-0.144,0.011-0.216,0.022c-13.271,2.057-26.785,3.905-40.167,5.495   c-4.387,0.521-7.521,4.501-7,8.888c0.483,4.067,3.938,7.058,7.935,7.058c0.314,0,0.633-0.019,0.954-0.057   c12.341-1.466,24.785-3.16,37.063-5.022c-0.443,5.075-0.887,10.177-1.333,15.306c-115.922,18.656-233.427,18.656-349.348,0   c-0.446-5.13-0.89-10.233-1.333-15.308c57.97,8.793,116.979,13.228,176.059,13.228c16.429,0,32.863-0.342,49.282-1.027   c4.415-0.185,7.844-3.912,7.66-8.327c-0.185-4.414-3.916-7.847-8.327-7.659c-75.667,3.159-151.665-1.073-225.89-12.574   c-0.072-0.011-0.144-0.013-0.216-0.022c-4.498-51.372-8.845-100.084-13.141-147.272c-0.179-1.96,0.391-3.774,1.606-5.108   c1.227-1.348,3.001-2.093,4.974-2.099h96v17.103c-13.786,3.561-24,16.104-24,30.987c0,17.645,14.355,32,32,32s32-14.355,32-32   c0-4.418-3.582-8-8-8s-8,3.582-8,8c0,8.822-7.178,16-16,16s-16-7.178-16-16c0-5.907,3.226-11.063,8-13.835V208c0,4.418,3.582,8,8,8   s8-3.582,8-8v-48.091h144v17.103c-13.786,3.561-24,16.104-24,30.987c0,17.645,14.355,32,32,32s32-14.355,32-32c0-4.418-3.582-8-8-8   s-8,3.582-8,8c0,8.822-7.178,16-16,16s-16-7.178-16-16c0-5.907,3.226-11.063,8-13.835V208c0,4.418,3.582,8,8,8s8-3.582,8-8v-48.091   h95.977c1.996,0.006,3.771,0.751,4.997,2.099C414.189,163.342,414.759,165.156,414.579,167.119z"/>
+                                <path d="M329.277,323.237c-7.913,0.718-15.932,1.363-23.835,1.916c-4.408,0.309-7.73,4.132-7.422,8.539   c0.295,4.218,3.808,7.441,7.972,7.441c0.188,0,0.377-0.006,0.567-0.02c8.012-0.561,16.143-1.215,24.165-1.943   c4.4-0.399,7.643-4.29,7.244-8.69C337.568,326.08,333.685,322.836,329.277,323.237z"/>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            </svg>
+                        <span class="cart-soft-count">3</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="search-all-wrap position-absolute bg-white">
+                <div class="position-relative w-100">
+                    <span class="position-absolute search-close" role="button">
+                        <svg width="16px" height="16px" viewBox="0 0 16 16">
+                            <g transform="scale(0.01565 0.01565)">
+                                <path d="M869.76 64l-357.76 357.76-357.76-357.76-90.24 90.24 357.76 357.76-357.76 357.76 90.24 90.24 357.76-357.76 357.76 357.76 90.24-90.24-357.76-357.76 357.76-357.76-90.24-90.24z"></path>
+                            </g>
+                        </svg>
+                    </span>
+                    <div class="container">
+                        <div class="row d-flex flex-column align-items-center">
+                            <div class="col-12">
+                                <div class="row align-items-center justify-content-center">
+                                    <div class="col-12 col-lg-8 form-group">
+                                        <input type="text" name="input-search" id="input-search" placeholder="Ürün adı veya kod bilgisi giriniz" onkeyup="searchMovies()">
+                                    </div>
+                                    <div class="col-12 col-lg-8 search-keywords">
+                                        <div class="row justify-content-around">
+                                            <span>#Kadın Bot</span>
+                                            <span>#Erkek Bot</span>
+                                            <span>#Çocuk Bot</span>
+                                            <span>#Çocuk</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-10">
+                                <div class="row dynamic-search">
+                                    <div class="text-center search-title">Son Bakılan Ürünler</div>
+                                    <div class="col-12">
+                                        <div class="row search-pr-loader">
+                                            <div class="col-6 col-lg-3 product-item product-item-search">
+                                                <div class="product-s-border border d-flex flex-column">
+                                                    <a href="#" class="product-image-wrapper">
+                                                        <figure class="product-image-figure">
+                                                            <img src="https://m.media-amazon.com/images/M/MV5BZGFkMTZkMDQtNzM4Yy00YWEwLTkzOWEtZTMyNDRlNmJhYWJhXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg" alt="Marvel One-Shot: All Hail the King" class="img-fluid">
+                                                        </figure>
+                                                    </a>
+                                                    <div class="position-relative product-search-other d-flex flex-column">
+                                                        <a href="#" class="product-title text-left text-dark mb-1">376163 Günlük Kadın Sarı Çizme</a>
+                                                        <span class="search-not-disc price-not-discounted text-delete text-gray">399,90 TL</span>
+                                                        <span class="search-sale product-sale font-weight-bold text-dark">299,90 TL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-lg-3 product-item product-item-search">
+                                                <div class="product-s-border border d-flex flex-column">
+                                                    <a href="#" class="product-image-wrapper">
+                                                        <figure class="product-image-figure">
+                                                            <img src="https://m.media-amazon.com/images/M/MV5BZGFkMTZkMDQtNzM4Yy00YWEwLTkzOWEtZTMyNDRlNmJhYWJhXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg" alt="Marvel One-Shot: All Hail the King" class="img-fluid">
+                                                        </figure>
+                                                    </a>
+                                                    <div class="position-relative product-search-other d-flex flex-column">
+                                                        <a href="#" class="product-title text-left text-dark mb-1">376163 Günlük Kadın Sarı Çizme</a>
+                                                        <span class="search-not-disc price-not-discounted text-delete text-gray">399,90 TL</span>
+                                                        <span class="search-sale product-sale font-weight-bold text-dark">299,90 TL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-lg-3 product-item product-item-search">
+                                                <div class="product-s-border border d-flex flex-column">
+                                                    <a href="#" class="product-image-wrapper">
+                                                        <figure class="product-image-figure">
+                                                            <img src="https://m.media-amazon.com/images/M/MV5BZGFkMTZkMDQtNzM4Yy00YWEwLTkzOWEtZTMyNDRlNmJhYWJhXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg" alt="Marvel One-Shot: All Hail the King" class="img-fluid">
+                                                        </figure>
+                                                    </a>
+                                                    <div class="position-relative product-search-other d-flex flex-column">
+                                                        <a href="#" class="product-title text-left text-dark mb-1">376163 Günlük Kadın Sarı Çizme</a>
+                                                        <span class="search-not-disc price-not-discounted text-delete text-gray">399,90 TL</span>
+                                                        <span class="search-sale product-sale font-weight-bold text-dark">299,90 TL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-6 col-lg-3 product-item product-item-search">
+                                                <div class="product-s-border border d-flex flex-column">
+                                                    <a href="#" class="product-image-wrapper">
+                                                        <figure class="product-image-figure">
+                                                            <img src="https://m.media-amazon.com/images/M/MV5BZGFkMTZkMDQtNzM4Yy00YWEwLTkzOWEtZTMyNDRlNmJhYWJhXkEyXkFqcGdeQXVyNTE1NjY5Mg@@._V1_SX300.jpg" alt="Marvel One-Shot: All Hail the King" class="img-fluid">
+                                                        </figure>
+                                                    </a>
+                                                    <div class="position-relative product-search-other d-flex flex-column">
+                                                        <a href="#" class="product-title text-left text-dark mb-1">376163 Günlük Kadın Sarı Çizme</a>
+                                                        <span class="search-not-disc price-not-discounted text-delete text-gray">399,90 TL</span>
+                                                        <span class="search-sale product-sale font-weight-bold text-dark">299,90 TL</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="search-overlay"></div>
+        </div>
+        <div class="position-fixed cart-wrapper py-5 px-4 bg-white">
+            <div class="col-12 cart-container">
+                <div class="row align-items-center justify-content-between mb-2">
+                    <span class="d-flex align-items-center cart-title">
+                        Sepetim (<span class="cart-soft-count"></span>)
+                    </span>
+                    <span role="button" class="d-flex align-items-center cart-close">
+                        <svg width="16px" height="16px" viewBox="0 0 16 16">
+                            <g transform="scale(0.01565 0.01565)">
+                                <path d="M869.76 64l-357.76 357.76-357.76-357.76-90.24 90.24 357.76 357.76-357.76 357.76 90.24 90.24 357.76-357.76 357.76 357.76 90.24-90.24-357.76-357.76 357.76-357.76-90.24-90.24z"></path>
+                            </g>
+                        </svg>
+                    </span>
+                </div>
+                <div class="row cart-empty py-4">
+                    <div class="col-12 d-flex align-items-center justify-content-center cart-empty-image">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 448 448" style="enable-background:new 0 0 448 448;" xml:space="preserve">
+                            <g>
+                                <path d="M424.807,151.238c-4.284-4.707-10.245-7.311-16.807-7.329h-96V88c0-48.523-39.477-88-88-88s-88,39.477-88,88v55.909H39.977   c-6.539,0.019-12.5,2.621-16.783,7.329c-4.273,4.694-6.3,10.851-5.708,17.332c6.69,73.481,13.5,150.628,20.821,235.847   c1.094,12.701,11.471,24.62,23.637,27.137C115.156,442.467,169.679,448,224,448s108.845-5.533,162.069-16.449   c12.153-2.514,22.529-14.433,23.624-27.136c7.309-85.09,14.12-162.235,20.82-235.842   C431.106,162.09,429.08,155.934,424.807,151.238z M152,88c0-39.701,32.299-72,72-72s72,32.299,72,72v55.909H152V88z    M382.841,415.88C330.686,426.576,277.244,432,224,432s-106.686-5.424-158.828-16.117c-5.232-1.082-10.438-7.201-10.924-12.837   c-1.179-13.724-2.344-27.218-3.498-40.543c57.499,9.043,115.374,13.579,173.249,13.579c57.875,0,115.75-4.535,173.249-13.579   c-1.154,13.326-2.319,26.82-3.497,40.541C393.266,408.681,388.059,414.801,382.841,415.88z M414.579,167.119   c-4.3,47.242-8.646,95.953-13.14,147.27c-0.072,0.009-0.144,0.011-0.216,0.022c-13.271,2.057-26.785,3.905-40.167,5.495   c-4.387,0.521-7.521,4.501-7,8.888c0.483,4.067,3.938,7.058,7.935,7.058c0.314,0,0.633-0.019,0.954-0.057   c12.341-1.466,24.785-3.16,37.063-5.022c-0.443,5.075-0.887,10.177-1.333,15.306c-115.922,18.656-233.427,18.656-349.348,0   c-0.446-5.13-0.89-10.233-1.333-15.308c57.97,8.793,116.979,13.228,176.059,13.228c16.429,0,32.863-0.342,49.282-1.027   c4.415-0.185,7.844-3.912,7.66-8.327c-0.185-4.414-3.916-7.847-8.327-7.659c-75.667,3.159-151.665-1.073-225.89-12.574   c-0.072-0.011-0.144-0.013-0.216-0.022c-4.498-51.372-8.845-100.084-13.141-147.272c-0.179-1.96,0.391-3.774,1.606-5.108   c1.227-1.348,3.001-2.093,4.974-2.099h96v17.103c-13.786,3.561-24,16.104-24,30.987c0,17.645,14.355,32,32,32s32-14.355,32-32   c0-4.418-3.582-8-8-8s-8,3.582-8,8c0,8.822-7.178,16-16,16s-16-7.178-16-16c0-5.907,3.226-11.063,8-13.835V208c0,4.418,3.582,8,8,8   s8-3.582,8-8v-48.091h144v17.103c-13.786,3.561-24,16.104-24,30.987c0,17.645,14.355,32,32,32s32-14.355,32-32c0-4.418-3.582-8-8-8   s-8,3.582-8,8c0,8.822-7.178,16-16,16s-16-7.178-16-16c0-5.907,3.226-11.063,8-13.835V208c0,4.418,3.582,8,8,8s8-3.582,8-8v-48.091   h95.977c1.996,0.006,3.771,0.751,4.997,2.099C414.189,163.342,414.759,165.156,414.579,167.119z"></path>
+                                <path d="M329.277,323.237c-7.913,0.718-15.932,1.363-23.835,1.916c-4.408,0.309-7.73,4.132-7.422,8.539   c0.295,4.218,3.808,7.441,7.972,7.441c0.188,0,0.377-0.006,0.567-0.02c8.012-0.561,16.143-1.215,24.165-1.943   c4.4-0.399,7.643-4.29,7.244-8.69C337.568,326.08,333.685,322.836,329.277,323.237z"></path>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="w-100 cart-empty-title text-center text-black">Sepetinizde Ürün Yok</div>
+                    <div class="cart-empty-desc text-center text-black">Aşağıdaki ürünleri inceleyerek hemen alışverişe başlayabilirsiniz.</div>
+                    <div class="w-100 d-flex flex-column">
+                        <a href="#" class="btn w-100 d-flex align-items-center justify-content-center text-center text-black font-weight-bold cart-btn-white">SİZİN İÇİN SEÇTİKLERİMİZ</a>
+                        <a href="#" class="btn btn-danger w-100 d-flex align-items-center justify-content-center text-center text-white font-weight-bold cart-btn-red">SEZON İNDİRİMİ</a>
+                    </div>
+                    <div class="cart-empty-banner d-flex text-center">
+                        <img src="https://via.placeholder.com/360x450" alt="Sneaker" class="w-100 img-fluid">
+                    </div>
+                </div>
+                <div class="row cart-full"></div>
+                <div class="row cart-total-wrap d-flex flex-column">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span>Ara Toplam</span>
+                        <span class="cart-total-load"></span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <span>Kargo Tutarı</span>
+                        <span>ÜCRETSİZ</span>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between cart-full-total font-weight-bold">
+                        <span>Toplam Tutar</span>
+                        <span class="cart-total-load"></span>
+                    </div>
+                    <div class="w-100 d-flex flex-column">
+                        <a href="#" class="btn w-100 d-flex align-items-center justify-content-center text-center text-black font-weight-bold cart-btn-white">SEPETE GİT</a>
+                        <a href="#" class="btn btn-black w-100 d-flex align-items-center justify-content-center text-center text-white font-weight-bold cart-btn-red">SİPARİŞİ TAMAMLA</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-overlay"></div>
+    </header>
+    <section>
+        <div class="breadcrumb py-2">
+            <div class="col-12">
+                <div class="row align-items-center justify-content-center flex-column">
+                    <div class="breadcrumb-title">Kadın Bot Çizme</div>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                          <li class="breadcrumb-item"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item"><a href="#">Library</a></li>
+                          <li class="breadcrumb-item active" aria-current="page">Data</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid product-main">
+            <div class="row pr-main">
+                <div class="col-12 col-lg-3 pr-filter-wrap">
+                    <div class="row">
+                        <div class="col-12 pr-filter-title">Ürünleri Filtrele</div>
+                        <div class="col-12 filter-wrapper">
+                            <div class="w-100 filter-wrapper">
+                                <div class="col-12 filter-group" data-id="Year">
+                                    <div class="row align-items-center filter-title">Year</div> 
+                                    <div class="row filter-options" data-filter="Year">
+
+                                    </div>
+                                </div>
+                                <div class="col-12 filter-group" data-id="Type">
+                                    <div class="row align-items-center filter-title">Type</div>
+                                    <div class="row filter-options" data-filter="Type">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 filter-buttons">
+                            <a role="button" onclick="filterGo()" class="w-100 btn btn-filter-go btn-black d-flex align-items-center justify-content-center">ÜRÜNLERİ GÖR</a>
+                            <a role="button" onclick="filterRemove();" class="w-100 btn btn-filter-remove btn-black d-flex align-items-center justify-content-center">FİLTRELERİ TEMİZLE</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-9 pr-list-wrap">
+                    <div class="row mx-0 align-items-center justify-content-end">
+                        <span class="d-flex total-product">96 Ürün</span>
+                        <select name="sort" id="sort">
+                            <option value="0">Ürünleri Sırala</option>
+                            <option value="1">Alfabetik A-Z</option>
+                            <option value="2">Alfabetik Z-A</option>
+                        </select>
+                    </div>
+                    <div class="row dynamic-pr-list" data-load="Lord of the rings">
+                    </div>
+                    <span class="d-block product-loader-wrap" data-page="1"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container-fluid bg-success py-3">
+            <div class="row align-items-center">
+                <div class="col-4 text-center footer-campaign">Üye Ol, <span><span>%20</span> İndirim Kazan!</span></div>
+                <div class="col-4 footer-newsletter">
+                    <form action="" class="d-flex align-items-center">
+                        <input type="text" class="w-100" placeholder="E-mail adresinizi giriniz">
+                        <button class="btn btn-dark">KAYIT OL</button>
+                    </form>
+                </div>
+                <div class="col-4 d-flex align-items-center footer-kvkk">
+                    <input type="checkbox" name="kvkk" id="kvkk">
+                    <label for="kvkk">
+                        <a href="#" class="">Gizlilik Onayı:</a> lorem ipsum dolor sit amet <br>ipsum dolor sit amet
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid py-5 footer-menus">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-12">
+                    <div class="row">
+                        <div class="col-3">
+                            <h3>Online Destek</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">onlinesatis@greyder.com</a></li>
+                                <li><a href="#" class="font-weight-bold">0850 744 07 77</a></li>
+                                <li><a href="#">İletişim</a></li>
+                                <li><a href="#">Yardım</a></li>
+                                <li><a href="#">Site Haritası</a></li>
+                                <li><a href="#">Kullanım Sözleşmesi</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <h3>Müşteri Hizmetleri</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Hakkımızda</a></li>
+                                <li><a href="#">İnsan Kaynakları</a></li>
+                                <li><a href="#">Mağazalarımız</a></li>
+                                <li><a href="#">Sipariş Takibi</a></li>
+                                <li><a href="#">Teslimat ve Kargo</a></li>
+                                <li><a href="#">Değişim ve İade</a></li>
+                                <li><a href="#">Ödeme</a></li>
+                                <li><a href="#">Sık Sorulan Sorular</a></li>
+                                <li><a href="#">Bilgi Toplumu Hizmetleri</a></li>
+                                <li><a href="#">Kişisel Verilerin Korunması</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <h3>Kategoriler</h3>
+                            <ul class="list-unstyled">
+                                <li><a href="#">Kadın Bot</a></li>
+                                <li><a href="#">Casual Ayakkabı</a></li>
+                                <li><a href="#">Erkek Ayakkabı</a></li>
+                                <li><a href="#">Erkek Bot</a></li>
+                                <li><a href="#">Erkek Çanta</a></li>
+                                <li><a href="#">Erkek Çocuk Bot</a></li>
+                                <li><a href="#">Kışlık Ayakkabı</a></li>
+                                <li><a href="#">Su Geçirmez Ayakkabı</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-3">
+                            <h3>Sosyal Medya</h3>
+                            <ul class="list-unstyled  footer-social">
+                                <li>
+                                    <a href="#">
+                                        <img src="https://via.placeholder.com/30x30" alt="Facebook" class="img-fluid">
+                                        Facebook
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="https://via.placeholder.com/30x30" alt="Twitter" class="img-fluid">
+                                        Twitter
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="https://via.placeholder.com/30x30" alt="Instagram" class="img-fluid">
+                                        Instagram
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="https://via.placeholder.com/30x30" alt="Youtube" class="img-fluid">
+                                        Youtube
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="https://via.placeholder.com/30x30" alt="Pinterest" class="img-fluid">
+                                        Pinterest
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid bg-dark text-center text-white py-3">&copy; 2023 Kavsan Ayakkabı San. Tic. A.Ş. Her Hakkı saklıdır.</div>
+    </footer>
+    <script type="text/javascript" src="assets/minify/bundlePr.js"></script>
+</body>
+</html>
